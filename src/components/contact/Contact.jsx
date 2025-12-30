@@ -67,7 +67,7 @@ const Contact = () => {
                     placeholder="+64 2134678"
                   />
                 </div>
-                <label className="lbl">Message</label>
+                <label className="lbl">Message / Feedback</label>
                 <div>
                   <textarea
                     className="inp-text"

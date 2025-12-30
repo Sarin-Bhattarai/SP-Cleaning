@@ -29,7 +29,6 @@ const Footer = () => {
               <FaInstagram className="i" />
               <FaTwitter className="i" />
               <FaYoutube className="i" />
-              git init
             </div>
           </div>
 
@@ -90,7 +89,7 @@ const Footer = () => {
             </div>
             <div className="icon">
               <FaEnvelope className="ia" />
-              <label>gcsagar8@gmail.com</label>
+              <label>spcleaning31@gmail.com</label>
             </div>
           </div>
         </div>
