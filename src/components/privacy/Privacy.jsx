@@ -12,7 +12,7 @@ const Privacy = () => {
 
           <div className="left-privacy">
             <h2>Privacy Policy</h2>
-            <h3>Our privacy policy was last updated on june 2022.</h3>
+            <h3>Our privacy policy was last updated on june 2025.</h3>
             <p>
               This Privacy Policy describes our policies and procedures on the
               collection, use and disclosure of your information when you use
@@ -60,8 +60,9 @@ const Privacy = () => {
               Our Site is not directed at children. We do not knowingly collect
               Personal Information from children under the age of 13. If you are
               a parent or guardian and believe your child has provided us with
-              Personal Information without your consent, please contact us at
-              inforeflectioncleaners@gmail.com and we will take steps to remove
+              Personal Information without your consent, please contact us
+              at&nbsp;
+              <b>spcleaning31@gmail.com</b> and we will take steps to remove
               such Personal Information from our systems.
             </p>
           </div>

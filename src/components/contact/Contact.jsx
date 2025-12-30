@@ -4,7 +4,7 @@ import { useForm } from "@formspree/react";
 import { useHistory } from "react-router-dom";
 
 const Contact = () => {
-  const [state, handleSubmit] = useForm("xyyabpgj");
+  const [state, handleSubmit] = useForm("xpqznwor");
   const history = useHistory();
   if (state.succeeded) {
     return (
