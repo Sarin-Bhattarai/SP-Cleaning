@@ -1,29 +1,30 @@
+/* BASE */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* PRICING */
 .pricing-section {
   padding: 80px 20px;
   background: #0b1d33;
   color: #ffffff;
-}
-
-.pricing-container {
-  max-width: 1200px;
-  margin: auto;
   text-align: center;
 }
 
 .pricing-title {
   font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 10px;
   color: #f5c26b;
 }
 
 .pricing-subtitle {
-  font-size: 16px;
   margin-bottom: 50px;
   opacity: 0.9;
 }
 
 .pricing-grid {
+  max-width: 1200px;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
@@ -32,64 +33,19 @@
 .pricing-card {
   background: #ffffff;
   color: #0b1d33;
-  border-radius: 16px;
   padding: 35px 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
   position: relative;
-  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease;
 }
 
 .pricing-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-}
-
-.pricing-card h3 {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.price {
-  font-size: 34px;
-  font-weight: 700;
-  margin: 10px 0;
-}
-
-.desc {
-  font-size: 14px;
-  margin-bottom: 20px;
-  color: #555;
-}
-
-.pricing-card ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 25px;
-}
-
-.pricing-card ul li {
-  margin: 10px 0;
-  font-size: 14px;
-}
-
-.pricing-btn {
-  background: #f5c26b;
-  color: #0b1d33;
-  border: none;
-  padding: 12px 28px;
-  font-size: 15px;
-  font-weight: 600;
-  border-radius: 30px;
-  cursor: pointer;
-}
-
-.pricing-btn:hover {
-  background: #e5b053;
 }
 
 .featured {
   border: 3px solid #f5c26b;
-  transform: scale(1.03);
 }
 
 .badge {
@@ -99,54 +55,131 @@
   background: #f5c26b;
   color: #0b1d33;
   padding: 6px 14px;
-  font-size: 12px;
-  font-weight: 700;
   border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
-/* ADD-ONS SECTION */
-.addons-section {
-  margin-top: 80px;
+.price {
+  font-size: 34px;
+  font-weight: bold;
 }
 
-.addons-title {
-  font-size: 28px;
-  margin-bottom: 30px;
-  color: #f5c26b;
-}
-
-.addons-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-}
-
-.addon-card {
-  background: #ffffff;
-  color: #0b1d33;
-  padding: 25px;
-  border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.addon-card h4 {
-  font-size: 20px;
-  margin-bottom: 8px;
-}
-
-.addon-price {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.addon-desc {
+.desc {
   font-size: 14px;
   color: #555;
 }
 
-.addons-note {
-  margin-top: 20px;
-  font-size: 13px;
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pricing-card li {
+  margin: 10px 0;
+}
+
+.pricing-btn {
+  background: #f5c26b;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pricing-btn:hover {
+  background: #e5b053;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #ffffff;
+  color: #0b1d33;
+  width: 90%;
+  max-width: 480px;
+  padding: 30px;
+  border-radius: 16px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  color: #0b1d33;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  background: #e5b053;
+}
+
+/* FORM */
+.quote-form input,
+.quote-form select,
+.quote-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.checkbox-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #f5c26b;
+  padding: 14px;
+  border-radius: 30px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.error {
+  display: block;
+  color: #d32f2f;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.success-message {
+  text-align: center;
+  padding: 30px 10px;
+}
+
+.success-message h3 {
+  color: #0b1d33;
+  margin-bottom: 10px;
+}
+
+.success-message p {
+  font-size: 14px;
   opacity: 0.85;
 }

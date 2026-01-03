@@ -1,11 +1,11 @@
 import React from "react";
 import "../../../utils/css/home.css";
-import homePic from "../../../utils/assets/f-home.jpg";
-import food1 from "../../../utils/assets/men.png";
-import food2 from "../../../utils/assets/materials.png";
-import food3 from "../../../utils/assets/work.png";
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import food1 from "../../../utils/assets/men.png";
+import food3 from "../../../utils/assets/work.png";
+import homePic from "../../../utils/assets/f-home.jpg";
+import food2 from "../../../utils/assets/materials.png";
+import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Home = () => {
   return (
@@ -27,10 +27,13 @@ const Home = () => {
               SINCE 2025
             </h1>
             <div className="socialIcon">
-              <a href="https://www.facebook.com/" target="?">
+              <a
+                href="https://www.facebook.com/profile.php?id=61585392654596"
+                target="?"
+              >
                 <FaFacebookF className="i facebook" />
               </a>
-              <a href="https://www.instagram.com/" target="?">
+              <a href="https://www.instagram.com/spcleaningnz/" target="?">
                 <FaInstagram className="i instagram" />
               </a>
               <a href="https://twitter.com/?lang=en" target="?">

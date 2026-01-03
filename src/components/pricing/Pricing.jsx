@@ -1,5 +1,6 @@
-import React from "react";
+import { useState } from "react";
 import "../../utils/css/pricing.css";
+import { useForm } from "@formspree/react";
 
 const pricingPlans = [
   {
@@ -39,15 +40,18 @@ const pricingPlans = [
 ];
 
 export default function Pricing() {
+  const [open, setOpen] = useState(false);
+  const [state, handleSubmit, reset] = useForm("xpqznwor");
+
   return (
-    <section className="pricing-section">
-      <div className="container">
+    <>
+      {/* PRICING SECTION */}
+      <section className="pricing-section">
         <h2 className="pricing-title">Our Pricing</h2>
         <p className="pricing-subtitle">
           Professional & affordable cleaning services across New Zealand
         </p>
 
-        {/* MAIN PRICING */}
         <div className="pricing-grid">
           {pricingPlans.map((plan, index) => (
             <div
@@ -60,43 +64,112 @@ export default function Pricing() {
               <p className="desc">{plan.description}</p>
 
               <ul>
-                {plan.features.map((feature, i) => (
-                  <li key={i}>✓ {feature}</li>
+                {plan.features.map((item, i) => (
+                  <li key={i}>✓ {item}</li>
                 ))}
               </ul>
 
-              <button className="pricing-btn">Get a Quote</button>
+              <button
+                className="pricing-btn"
+                onClick={() => {
+                  reset();
+                  setOpen(true);
+                }}
+              >
+                Get a Quote
+              </button>
             </div>
           ))}
         </div>
+      </section>
 
-        {/* ADD-ONS */}
-        <div className="addons-section">
-          <h3 className="addons-title">Add-On Services</h3>
+      {/* MODAL */}
+      {open && (
+        <div className="modal-overlay" onClick={() => setOpen(false)}>
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="modal-close"
+              onClick={() => {
+                reset();
+                setOpen(false);
+              }}
+            >
+              ✕
+            </button>
 
-          <div className="addons-grid">
-            <div className="addon-card">
-              <h4>Oven Cleaning</h4>
-              <p className="addon-price">from $60</p>
-              <p className="addon-desc">
-                Deep interior oven clean, grease & residue removal
-              </p>
-            </div>
+            {!state.succeeded ? (
+              <>
+                <h3>Get a Free Quote</h3>
 
-            <div className="addon-card">
-              <h4>Window Cleaning</h4>
-              <p className="addon-price">from $5 / window</p>
-              <p className="addon-desc">
-                Internal window cleaning for a streak-free finish
-              </p>
-            </div>
+                <form className="quote-form" onSubmit={handleSubmit}>
+                  <input name="name" placeholder="Full Name" required />
+
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="Email Address"
+                    required
+                  />
+
+                  <input
+                    name="mobile"
+                    type="tel"
+                    placeholder="+64 21 345 678"
+                    required
+                  />
+
+                  <select name="propertyType" required>
+                    <option value="">Property Type</option>
+                    <option>House</option>
+                    <option>Apartment</option>
+                    <option>Office</option>
+                  </select>
+
+                  <select name="cleaningType" required>
+                    <option value="">Cleaning Type</option>
+                    <option>Standard Clean</option>
+                    <option>Deep / Spring Clean</option>
+                    <option>Move In / Move Out</option>
+                  </select>
+
+                  <div className="checkbox-group">
+                    <label>
+                      <input type="checkbox" name="ovenCleaning" /> Oven
+                      Cleaning
+                    </label>
+                    <label>
+                      <input type="checkbox" name="windowCleaning" /> Window
+                      Cleaning
+                    </label>
+                  </div>
+
+                  <textarea
+                    name="message"
+                    placeholder="Additional details (optional)"
+                  />
+
+                  <button
+                    type="submit"
+                    className="submit-btn"
+                    disabled={state.submitting}
+                  >
+                    {state.submitting ? "Sending..." : "Submit Request"}
+                  </button>
+
+                  <p className="form-note">
+                    * Quote request will be sent to our email.
+                  </p>
+                </form>
+              </>
+            ) : (
+              <div className="success-message">
+                <h3>Thank you!</h3>
+                <p>Your quote request has been sent.</p>
+              </div>
+            )}
           </div>
-
-          <p className="addons-note">
-            * Add-on services are available with any cleaning package.
-          </p>
         </div>
-      </div>
-    </section>
+      )}
+    </>
   );
 }
