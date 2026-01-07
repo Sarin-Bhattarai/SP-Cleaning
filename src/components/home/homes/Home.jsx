@@ -1,13 +1,13 @@
-import React from "react";
+import { useState } from "react";
 import "../../../utils/css/home.css";
 import { Link } from "react-router-dom";
 import food1 from "../../../utils/assets/men.png";
+import QuoteModal from "../../pricing/QuoteModal";
 import food3 from "../../../utils/assets/work.png";
-import homePic from "../../../utils/assets/f-home.jpg";
 import food2 from "../../../utils/assets/materials.png";
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Home = () => {
+  const [open, setOpen] = useState(false);
   return (
     <>
       {/* HERO SECTION */}
@@ -25,7 +25,10 @@ const Home = () => {
             </p>
 
             <div className="hero-btns">
-              <button className="primary-btn">Get a Free Quote</button>
+              <button className="primary-btn" onClick={() => setOpen(true)}>
+                Get a Free Quote
+              </button>
+              <QuoteModal open={open} onClose={() => setOpen(false)} />
               <a href="tel:+64 0224179564" className="outline-btn">
                 +64 0224179564
               </a>
