@@ -212,3 +212,110 @@ p {
   background-color: #08071c;
   padding: 22px;
 }
+
+/* ===== HERO SECTION ===== */
+.hero-new {
+  background: #f8f9fa;
+  color: #0b5ed7;
+  padding: 80px 0;
+  border-bottom: 1px solid #eef1f5;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #0b5ed7;
+  line-height: 1.15;
+}
+
+.hero-text span {
+  color: #f4b400;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  color: #555;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.outline-btn {
+  border: 2px solid #0b5ed7;
+  color: #0b5ed7;
+  padding: 12px 26px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.hero-img img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* ===== WHY CHOOSE US ===== */
+.why-new {
+  background: #f8f9fa;
+  padding: 70px 0;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.why-box {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.why-box span {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.why-box h3 {
+  color: #0b5ed7;
+  margin-bottom: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-btns {
+    justify-content: center;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}

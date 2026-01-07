@@ -17,8 +17,8 @@ const Terms = () => {
             </p>
             <p>
               These Terms of Service (“Terms”, “Terms of Service”) govern your
-              use of our website located at https://sp-cleaning-nu.vercel.app/
-              (together or individually “Service”) operated by{" "}
+              use of our website located at https://spcleaners.nz/ (together or
+              individually “Service”) operated by{" "}
               <span>SP Cleaning Solution</span>.
             </p>
             <p>

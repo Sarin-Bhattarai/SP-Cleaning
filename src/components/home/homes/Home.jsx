@@ -10,52 +10,33 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 const Home = () => {
   return (
     <>
-      <section className="home">
-        <div className="container flex">
-          <div className="left">
-            <div className="img">
-              <img src={homePic} alt="cleaning" />
+      {/* HERO SECTION */}
+      <section className="hero-new">
+        <div className="container hero-grid">
+          <div className="hero-text">
+            <h1>
+              Professional Cleaning <br />
+              <span>You Can Trust</span>
+            </h1>
+
+            <p>
+              Residential & Commercial Cleaning Across Auckland <br />
+              <strong>Reliable • Affordable • Eco-Friendly</strong>
+            </p>
+
+            <div className="hero-btns">
+              <button className="primary-btn">Get a Free Quote</button>
+              <a href="tel:+64 0224179564" className="outline-btn">
+                +64 0224179564
+              </a>
             </div>
           </div>
-          <div className="right topMargin">
-            <h1
-              style={{
-                fontSize: "52px",
-              }}
-            >
-              SP CLEANING SOLUTION <br />
-              SINCE 2025
-            </h1>
-            <div className="socialIcon">
-              <a
-                href="https://www.facebook.com/profile.php?id=61585392654596"
-                target="?"
-              >
-                <FaFacebookF className="i facebook" />
-              </a>
-              <a href="https://www.instagram.com/spcleaningnz/" target="?">
-                <FaInstagram className="i instagram" />
-              </a>
-              <a href="https://twitter.com/?lang=en" target="?">
-                <FaTwitter className="i twitter" />
-              </a>
-              <a href="https://www.youtube.com/" target="?">
-                <FaYoutube className="i youtube" />
-              </a>
-            </div>
-            <p
-              style={{
-                textAlign: "justify",
-              }}
-            >
-              Welcome to our cleaning company! We are a professional cleaning
-              service dedicated to providing exceptional cleaning solutions for
-              homes and businesses. Our team of experienced cleaners is
-              committed to ensuring that your space is sparkling clean and
-              organized, leaving you with more time to focus on the things that
-              matter most to you. Trust us to take care of your cleaning needs
-              and enjoy a clean and fresh space every day!
-            </p>
+
+          <div className="hero-img">
+            <img
+              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952"
+              alt="Cleaning Service"
+            />
           </div>
         </div>
       </section>
@@ -110,6 +91,41 @@ const Home = () => {
                   </Link>
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US */}
+      <section className="why-new">
+        <div className="container">
+          <div className="heading">
+            <h1>Why Choose Us</h1>
+          </div>
+
+          <div className="why-grid">
+            <div className="why-box">
+              <span>🤝</span>
+              <h3>Trusted Professionals</h3>
+              <p>Fully trained and reliable cleaning experts.</p>
+            </div>
+
+            <div className="why-box">
+              <span>💰</span>
+              <h3>Affordable Pricing</h3>
+              <p>No hidden costs, transparent pricing.</p>
+            </div>
+
+            <div className="why-box">
+              <span>🌿</span>
+              <h3>Eco-Friendly Products</h3>
+              <p>Safe for family, pets and environment.</p>
+            </div>
+
+            <div className="why-box">
+              <span>📅</span>
+              <h3>Flexible Scheduling</h3>
+              <p>Cleaning times that suit your lifestyle.</p>
             </div>
           </div>
         </div>
